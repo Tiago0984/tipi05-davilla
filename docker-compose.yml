@@ -9,7 +9,7 @@ services:
     depends_on:
       - php
     networks:
-      - laravel
+      - davilla_network
 
   php:
     build:
@@ -21,7 +21,7 @@ services:
     depends_on:
       - mysql
     networks:
-      - laravel
+      - davilla_network
 
   mysql:
     image: mysql:8.4
@@ -33,7 +33,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
-      - laravel
+      - davilla_network
 
   composer:
     build:
@@ -44,7 +44,7 @@ services:
     working_dir: /var/www/html
     entrypoint: ["composer"]
     networks:
-      - laravel
+      - davilla_network
 
   node:
     image: node:22-alpine
@@ -56,11 +56,11 @@ services:
     entrypoint: ["sh", "-c"]
     command: "npm install && npm run dev -- --host"
     networks:
-      - laravel
+      - davilla_network
 
 volumes:
   mysql_data:
 
 networks:
-  laravel:
+  davilla_network:
     driver: bridge
