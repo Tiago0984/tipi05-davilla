@@ -7,7 +7,7 @@
      <div class="auto-container">
          <div class="sec-title text-center">
              <div class="divider"><img src="{{ asset('davilla/images/icons/divider_1.png') }}" alt=""></div>
-             <h2>Our Specialties</h2>
+             <h2>Nossas Especialidades</h2>
          </div>
          <!-- Services Carousel -->
          <div class="services-carousel owl-carousel owl-theme">

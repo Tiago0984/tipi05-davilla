@@ -25,7 +25,7 @@
                                         <li><a href="index-8.html">Landing</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="about-us.html">Pages</a>
+                                <li class="dropdown"><a href="about-us.html">Sobre</a>
                                     <ul>
                                         <li><a href="about-us.html">About Us</a></li>
                                         <li><a href="our-staff.html">Our Staff</a></li>
@@ -34,7 +34,7 @@
                                         <li><a href="recipes-list.html">Recipes Grid</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="portfolio-masonry.html">Portfolio</a>
+                                <li class="dropdown"><a href="portfolio-masonry.html">Pedidos</a>
                                     <ul>
                                         <li><a href="portfolio-masonry.html">Masonry</a></li>
                                         <li><a href="portfolio-masonry-wide.html">Masonry Wide</a></li>
@@ -49,7 +49,7 @@
                             </ul>
 
                             <ul class="navigation menu-right clearfix">
-                                <li class="dropdown"><a href="blog-showcase.html">Blog</a>
+                                <li class="dropdown"><a href="blog-showcase.html">Cardápio</a>
                                     <ul>
                                         <li><a href="blog-showcase.html">Checkerboard</a></li>
                                         <li><a href="blog-standard.html">Standard</a></li>
@@ -69,7 +69,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="shop.html">Shop</a>
+                                <li class="dropdown"><a href="shop.html">Região</a>
                                     <ul>
                                         <li><a href="shop.html">Shop</a></li>
                                         <li><a href="shopping-cart.html">Cart</a></li>
@@ -77,7 +77,7 @@
                                         <li><a href="login.html">My account</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Contacts</a></li>
+                                <li><a href="contact.html">Contato</a></li>
                             </ul>
                         </div>
                     </nav>

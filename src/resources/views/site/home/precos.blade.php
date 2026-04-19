@@ -3,7 +3,7 @@
         <div class="auto-container">
             <div class="sec-title text-center">
                 <div class="divider"><img src="{{ asset('davilla/images/icons/divider_1.png') }}" alt=""></div>
-                <h2>Our Prices</h2>
+                <h2>Nossos preços</h2>
             </div>
 
             <div class="row">
