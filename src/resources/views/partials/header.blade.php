@@ -5,7 +5,7 @@
         <!-- Main box -->
         <div class="main-box">
             <div class="menu-box">
-                <div class="logo"><a href="index.html"><img src="{{ asset('davilla/images/logo-davilla.svg') }}" alt="" title=""></a></div>
+                <div class="logo"><a href="{{ route('home') }}"><img src="{{ asset('davilla/images/logo-davilla.svg') }}" alt="" title=""></a></div>
 
                 <!--Nav Box-->
                 <div class="nav-outer clearfix">
@@ -13,7 +13,7 @@
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation menu-left clearfix">
-                                <li class="current dropdown"><a href="index.html">Home</a>
+                                <li class="current dropdown"><a href="{{ route('home') }}">Home</a>
                                     <ul>
                                         <li class="current"><a href="index.html">Cakes</a></li>
                                         <li><a href="index-2.html">Lollipop</a></li>
@@ -25,7 +25,7 @@
                                         <li><a href="index-8.html">Landing</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="about-us.html">Sobre</a>
+                                <li class="dropdown"><a href="{{ route('sobre') }}">Sobre</a>
                                     <ul>
                                         <li><a href="about-us.html">About Us</a></li>
                                         <li><a href="our-staff.html">Our Staff</a></li>
@@ -34,7 +34,7 @@
                                         <li><a href="recipes-list.html">Recipes Grid</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="portfolio-masonry.html">Pedidos</a>
+                                <li class="dropdown"><a href="{{ route('pedidos') }}">Cardápio</a>
                                     <ul>
                                         <li><a href="portfolio-masonry.html">Masonry</a></li>
                                         <li><a href="portfolio-masonry-wide.html">Masonry Wide</a></li>
@@ -49,7 +49,7 @@
                             </ul>
 
                             <ul class="navigation menu-right clearfix">
-                                <li class="dropdown"><a href="blog-showcase.html">Cardápio</a>
+                                <li class="dropdown"><a href="{{ route('cardapio') }}">Pedidos</a>
                                     <ul>
                                         <li><a href="blog-showcase.html">Checkerboard</a></li>
                                         <li><a href="blog-standard.html">Standard</a></li>
@@ -69,7 +69,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="shop.html">Região</a>
+                                <li class="dropdown"><a href="{{ route('regiao') }}">Região</a>
                                     <ul>
                                         <li><a href="shop.html">Shop</a></li>
                                         <li><a href="shopping-cart.html">Cart</a></li>
@@ -77,7 +77,7 @@
                                         <li><a href="login.html">My account</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Contato</a></li>
+                                <li><a href="{{ route('contato') }}">Contato</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -129,7 +129,7 @@
             <div class="auto-container clearfix">
                 <!--Logo-->
                 <div class="logo">
-                    <a href="#" title="Sticky Logo"><img src="{{ asset('davilla/images/logo-davilla-texto.svg') }}" alt="Sticky Logo"></a>
+                    <a href="{{ route('home') }}" title="Sticky Logo"><img src="{{ asset('davilla/images/logo-davilla-texto.svg') }}" alt="Sticky Logo"></a>
                 </div>
 
                 <!--Nav Outer-->
@@ -144,7 +144,7 @@
 
         <!-- Mobile Header -->
         <div class="mobile-header">
-            <div class="logo"><a href="index.html"><img src="{{ asset('davilla/images/logo-small.png') }}" alt="" title=""></a></div>
+            <div class="logo"><a href="{{ route('home') }}"><img src="{{ asset('davilla/images/logo-small.png') }}" alt="" title=""></a></div>
 
             <!--Nav Box-->
             <div class="nav-outer clearfix">
@@ -155,7 +155,7 @@
         <!-- Mobile Menu  -->
         <div class="mobile-menu">            
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="{{ asset('davilla/images/logo-small.png') }}" alt="" title=""></a></div> 
+                <div class="nav-logo"><a href="{{ route('home') }}"><img src="{{ asset('davilla/images/logo-small.png') }}" alt="" title=""></a></div> 
                 <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
             </nav>
         </div><!-- End Mobile Menu -->
