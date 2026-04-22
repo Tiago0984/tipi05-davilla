@@ -13,7 +13,7 @@
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation menu-left clearfix">
-                                <li class="current dropdown"><a href="{{ route('home') }}">Home</a>
+                                <li class="{{ request()->routeIs('home') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('home') }}">Home</a>
                                     <ul>
                                         <li class="current"><a href="index.html">Cakes</a></li>
                                         <li><a href="index-2.html">Lollipop</a></li>
@@ -25,7 +25,7 @@
                                         <li><a href="index-8.html">Landing</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="{{ route('sobre') }}">Sobre</a>
+                                <li class="{{ request()->routeIs('sobre') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('sobre') }}">Sobre</a>
                                     <ul>
                                         <li><a href="about-us.html">About Us</a></li>
                                         <li><a href="our-staff.html">Our Staff</a></li>
@@ -34,7 +34,7 @@
                                         <li><a href="recipes-list.html">Recipes Grid</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="{{ route('pedidos') }}">Cardápio</a>
+                                <li class="{{ request()->routeIs('pedidos') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('pedidos') }}">Cardápio</a>
                                     <ul>
                                         <li><a href="portfolio-masonry.html">Masonry</a></li>
                                         <li><a href="portfolio-masonry-wide.html">Masonry Wide</a></li>
@@ -49,7 +49,7 @@
                             </ul>
 
                             <ul class="navigation menu-right clearfix">
-                                <li class="dropdown"><a href="{{ route('cardapio') }}">Pedidos</a>
+                                <li class="{{ request()->routeIs('cardapio') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('cardapio') }}">Pedidos</a>
                                     <ul>
                                         <li><a href="blog-showcase.html">Checkerboard</a></li>
                                         <li><a href="blog-standard.html">Standard</a></li>
@@ -69,7 +69,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="{{ route('regiao') }}">Região</a>
+                                <li class="{{ request()->routeIs('regiao') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('regiao') }}">Região</a>
                                     <ul>
                                         <li><a href="shop.html">Shop</a></li>
                                         <li><a href="shopping-cart.html">Cart</a></li>
@@ -77,7 +77,7 @@
                                         <li><a href="login.html">My account</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('contato') }}">Contato</a></li>
+                                <li class="{{ request()->routeIs('contato') ? 'current' : '' }}"><a href="{{ route('contato') }}">Contato</a></li>
                             </ul>
                         </div>
                     </nav>
