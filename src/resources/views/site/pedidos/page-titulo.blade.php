@@ -2,12 +2,12 @@
  @php
  $features = asset('davilla/images/fundosobre1.jpg');
  @endphp
- <section class="page-title" style="background-image:url('{{ $features }}');">
+ <section class="page-title" style="background-image:url('{{ $features }}')">
      <div class="auto-container">
-         <h1>About Us</h1>
+         <h1>Shop</h1>
          <ul class="page-breadcrumb">
-             <li><a href="index.html">home</a></li>
-             <li>About Us</li>
+             <li><a href="{{ route('home') }}">home</a></li>
+             <li>Shop</li>
          </ul>
      </div>
  </section>

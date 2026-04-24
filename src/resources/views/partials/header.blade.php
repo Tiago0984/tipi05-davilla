@@ -34,7 +34,7 @@
                                         <li><a href="recipes-list.html">Recipes Grid</a></li>
                                     </ul>
                                 </li>
-                                <li class="{{ request()->routeIs('pedidos') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('pedidos') }}">Cardápio</a>
+                                <li class="{{ request()->routeIs('cardapio') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('cardapio') }}">Cardápio</a>
                                     <ul>
                                         <li><a href="portfolio-masonry.html">Masonry</a></li>
                                         <li><a href="portfolio-masonry-wide.html">Masonry Wide</a></li>
@@ -49,7 +49,7 @@
                             </ul>
 
                             <ul class="navigation menu-right clearfix">
-                                <li class="{{ request()->routeIs('cardapio') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('cardapio') }}">Pedidos</a>
+                                <li class="{{ request()->routeIs('pedidos') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('pedidos') }}">Pedidos</a>
                                     <ul>
                                         <li><a href="blog-showcase.html">Checkerboard</a></li>
                                         <li><a href="blog-standard.html">Standard</a></li>

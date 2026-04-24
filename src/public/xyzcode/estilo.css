@@ -17,7 +17,7 @@
 }
 
 .main-header .logo {
-    width: 11%;
+    width: 10%;
     left: 49%;
     top: -25px;
 }
@@ -25,5 +25,5 @@
 .sticky-header .logo {
     top: 7px;
     left: 50.4%;
-    width: 8%;
+    width: 6%;
 }

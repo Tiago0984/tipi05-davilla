@@ -1,6 +1,6 @@
 <footer class="main-footer">
     @php
-    $features = asset('davilla/images/fundoFooter.png');
+    $features = asset('davilla/images/fundofooter.jpg');
     @endphp
     <div class="shape_wrapper shape_one">
         <div class="shape_inner" style="background-image: url('{{ $features }}');">
