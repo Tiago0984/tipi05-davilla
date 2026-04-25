@@ -1,6 +1,6 @@
  <!-- Seção de Receitas  -->
  @php
- $features = asset('davilla/images/fundoReceitas.png');
+ $features = asset('davilla/images/fundoreceitas2.jpg');
  @endphp
  <section class="recipes-section" style="background-image: url('{{ $features }}')">
      <div class="auto-container">

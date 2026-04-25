@@ -44,7 +44,7 @@
                 <!-- Recipe Block Two -->
                 <div class="recipe-block-two col-lg-4 col-md-6 col-sm-12">
                     <div class="image-box">
-                        <figure class="image"><a href="recipe-single.html"><img src="https://via.placeholder.com/700x525" alt=""></a></figure>
+                        <figure class="image"><a href="recipe-single.html"><img src="{{ asset('davilla/images/regiao1.jpg') }}" alt=""></a></figure>
                         <div class="caption-box">
                             <h3 class="recipe-title"><a href="recipe-single.html">Red Velvet Cake</a></h3>
                             <span class="devider"></span>
@@ -56,7 +56,7 @@
                 <!-- Recipe Block Two -->
                 <div class="recipe-block-two col-lg-4 col-md-6 col-sm-12">
                     <div class="image-box">
-                        <figure class="image"><a href="recipe-single.html"><img src="https://via.placeholder.com/700x525" alt=""></a></figure>
+                        <figure class="image"><a href="recipe-single.html"><img src="{{ asset('davilla/images/regiao2.jpg') }}" alt=""></a></figure>
                         <div class="caption-box">
                             <h3 class="recipe-title"><a href="recipe-single.html">Avocado Ice Cream</a></h3>
                             <span class="devider"></span>
@@ -68,7 +68,7 @@
                 <!-- Recipe Block Two -->
                 <div class="recipe-block-two col-lg-4 col-md-6 col-sm-12">
                     <div class="image-box">
-                        <figure class="image"><a href="recipe-single.html"><img src="https://via.placeholder.com/700x525" alt=""></a></figure>
+                        <figure class="image"><a href="recipe-single.html"><img src="{{ asset('davilla/images/regiao3.jpg') }}" alt=""></a></figure>
                         <div class="caption-box">
                             <h3 class="recipe-title"><a href="recipe-single.html">Vanilla Ice Cream</a></h3>
                             <span class="devider"></span>
@@ -80,7 +80,7 @@
                 <!-- Recipe Block Two -->
                 <div class="recipe-block-two col-lg-4 col-md-6 col-sm-12">
                     <div class="image-box">
-                        <figure class="image"><a href="recipe-single.html"><img src="https://via.placeholder.com/700x525" alt=""></a></figure>
+                        <figure class="image"><a href="recipe-single.html"><img src="{{ asset('davilla/images/regiao4.jpg') }}" alt=""></a></figure>
                         <div class="caption-box">
                             <h3 class="recipe-title"><a href="recipe-single.html">Chocolate Macarons</a></h3>
                             <span class="devider"></span>
@@ -92,7 +92,7 @@
                 <!-- Recipe Block Two -->
                 <div class="recipe-block-two col-lg-4 col-md-6 col-sm-12">
                     <div class="image-box">
-                        <figure class="image"><a href="recipe-single.html"><img src="https://via.placeholder.com/700x525" alt=""></a></figure>
+                        <figure class="image"><a href="recipe-single.html"><img src="{{ asset('davilla/images/regiao5.jpg') }}" alt=""></a></figure>
                         <div class="caption-box">
                             <h3 class="recipe-title"><a href="recipe-single.html">Homemade Ice Cream</a></h3>
                             <span class="devider"></span>
@@ -104,7 +104,7 @@
                 <!-- Recipe Block Two -->
                 <div class="recipe-block-two col-lg-4 col-md-6 col-sm-12">
                     <div class="image-box">
-                        <figure class="image"><a href="recipe-single.html"><img src="https://via.placeholder.com/700x525" alt=""></a></figure>
+                        <figure class="image"><a href="recipe-single.html"><img src="{{ asset('davilla/images/regiao6.jpg') }}" alt=""></a></figure>
                         <div class="caption-box">
                             <h3 class="recipe-title"><a href="recipe-single.html">Endless Flavor Capcakes</a></h3>
                             <span class="devider"></span>
@@ -116,7 +116,7 @@
                 <!-- Recipe Block Two -->
                 <div class="recipe-block-two col-lg-4 col-md-6 col-sm-12">
                     <div class="image-box">
-                        <figure class="image"><a href="recipe-single.html"><img src="https://via.placeholder.com/700x525" alt=""></a></figure>
+                        <figure class="image"><a href="recipe-single.html"><img src="{{ asset('davilla/images/regiao7.jpg') }}" alt=""></a></figure>
                         <div class="caption-box">
                             <h3 class="recipe-title"><a href="recipe-single.html">Colored Lollipops</a></h3>
                             <span class="devider"></span>
@@ -128,7 +128,7 @@
                 <!-- Recipe Block Two -->
                 <div class="recipe-block-two col-lg-4 col-md-6 col-sm-12">
                     <div class="image-box">
-                        <figure class="image"><a href="recipe-single.html"><img src="https://via.placeholder.com/700x525" alt=""></a></figure>
+                        <figure class="image"><a href="recipe-single.html"><img src="{{ asset('davilla/images/regiao8.jpg') }}" alt=""></a></figure>
                         <div class="caption-box">
                             <h3 class="recipe-title"><a href="recipe-single.html">Basic French Macarons</a></h3>
                             <span class="devider"></span>
@@ -140,7 +140,7 @@
                 <!-- Recipe Block Two -->
                 <div class="recipe-block-two col-lg-4 col-md-6 col-sm-12">
                     <div class="image-box">
-                        <figure class="image"><a href="recipe-single.html"><img src="https://via.placeholder.com/700x525" alt=""></a></figure>
+                        <figure class="image"><a href="recipe-single.html"><img src="{{ asset('davilla/images/regiao9.jpg') }}" alt=""></a></figure>
                         <div class="caption-box">
                             <h3 class="recipe-title"><a href="recipe-single.html">Cake with Caramel Icing</a></h3>
                             <span class="devider"></span>

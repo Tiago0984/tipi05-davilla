@@ -21,6 +21,8 @@
 
     </div>
 
+    @include('partials.scroll')
+
     @include('partials.script')
 
 </body>
