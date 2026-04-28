@@ -36,14 +36,11 @@
                                 </li>
                                 <li class="{{ request()->routeIs('cardapio') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('cardapio') }}">Cardápio</a>
                                     <ul>
-                                        <li><a href="portfolio-masonry.html">Masonry</a></li>
-                                        <li><a href="portfolio-masonry-wide.html">Masonry Wide</a></li>
-                                        <li><a href="portfolio-wide.html">Wide</a></li>
-                                        <li><a href="portfolio-with-filter.html">With Filter</a></li>
-                                        <li><a href="portfolio-two-column.html">Two Columns</a></li>
-                                        <li><a href="portfolio-with-sidebar.html">With Sidebar</a></li>
-                                        <li><a href="portfolio-square.html">Square</a></li>
-                                        <li><a href="portfolio-single.html">single Post</a></li>
+                                        @forelse ($categorias as $linha)
+                                            <li><a href="{{ route('cardapio.categoria', $linha->id_categoria) }}">{{ $linha->nome_categoria }}</a></li>
+                                        @empty
+                                            <li>Nenhuma categoria disponível</li>
+                                        @endforelse
                                     </ul>
                                 </li>
                             </ul>
@@ -72,9 +69,7 @@
                                 <li class="{{ request()->routeIs('regiao') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('regiao') }}">Região</a>
                                     <ul>
                                         <li><a href="shop.html">Shop</a></li>
-                                        <li><a href="shopping-cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="login.html">My account</a></li>
+                                       
                                     </ul>
                                 </li>
                                 <li class="{{ request()->routeIs('contato') ? 'current' : '' }}"><a href="{{ route('contato') }}">Contato</a></li>
