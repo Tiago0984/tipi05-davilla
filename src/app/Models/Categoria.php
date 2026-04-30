@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Produto;
 
-class categoria extends Model
+class Categoria extends Model
 {
     protected $table = 'tbl_categorias'; 
 
@@ -19,5 +20,13 @@ class categoria extends Model
     protected $fillable = [
         'nome_categoria',
         'descricao_categoria',
+        'status_categoria',
+        'ordem_categoria',
     ];
+
+    // hasMany: tem muitos, tem uma chave estrangeira
+    public function ProdutosCategoria()
+    {
+        return $this->hasMany(Produto::class, 'id_categoria', 'id_categoria');
+    }
 }
