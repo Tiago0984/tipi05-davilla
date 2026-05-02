@@ -17,13 +17,20 @@
 }
 
 .main-header .logo {
-    width: 11%;
-    left: 49.5%;
-    top: -25px;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    left: 48.5%;
+    top: -35px;
 }
 
 .sticky-header .logo {
     top: 7px;
     left: 50.7%;
-    width: 8%;
+    width: 6%;
+}
+
+.btn-box.text-center {
+    width: 100% !important;
+    clear: both; /* Evita que elementos flutuantes ao lado atrapalhem */
 }

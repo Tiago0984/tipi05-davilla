@@ -19,7 +19,5 @@
 <script src="{{ asset('davilla/js/owl.js') }}"></script>
 <script src="{{ asset('davilla/js/wow.js') }}"></script>
 <script src="{{ asset('davilla/js/appear.js') }}"></script>
-<script src="{{ asset('davilla/js/theia-sticky-sidebar.min.js') }}"></script>
 <script src="{{ asset('davilla/js/select2.min.js') }}"></script>
 <script src="{{ asset('davilla/js/jquery-ui.min.js') }}"></script>
-<script src="{{ asset('davilla/js/script.js') }}"></script>

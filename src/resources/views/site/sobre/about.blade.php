@@ -5,7 +5,7 @@
  <section class="about-section-two alternate" style="background-image: url('{{ $features }}');">
      <div class="auto-container">
          <div class="sec-title text-center">
-             <div class="divider"><img src="images/icons/divider_1.png" alt=""></div>
+             <div class="divider"><img src="{{ asset('davilla/images/icons/divider_1.png') }}" alt=""></div>
              <h2>Our Story</h2>
          </div>
          <div class="content-box">

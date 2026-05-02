@@ -29,7 +29,7 @@
 
     <script src="{{ asset('davilla/js/script.js') }}"></script>
 
-    @stack('scripts') 
+    @stack('scripts')
 
 
 </body>
