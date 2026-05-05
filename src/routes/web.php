@@ -19,5 +19,8 @@ Route::get('/contato', [ContatoController::class, 'contato'])->name('contato');
 // Rota para exibir o cardápio filtrado por categoria (Sub menu do cardápio)
 Route::get('/cardapio/categoria/{id}', [CardapioController::class, 'show'])->name('cardapio.categoria');
 
+// Submenu de Produtos
+Route::get('/cardapio/produto/{slug}', [CardapioController::class, 'showProduto'])->name('cardapio.produto');
+
 // Rota para exibir o cardápio filtrado por região (Sub menu de região)
 Route::get('/regiao/regiao/{id}', [RegiaoController::class, 'show'])->name('regiao.area');

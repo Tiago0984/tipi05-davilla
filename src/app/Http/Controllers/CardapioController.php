@@ -23,4 +23,20 @@ class CardapioController extends Controller
 
     return view('site.cardapio.cardapio', compact('filtroCategoria', 'listaProdutos'));
 }
+
+public function showProduto($slug)
+{
+
+    // Buscar o produto pelo ID
+    $produto = Produto::with('CategoriaProduto')
+    ->where('status_produto', 'ATIVO')
+    ->where('slug_produto', $slug)
+    ->firstOrFail();
+
+    // dd($produto);
+
+    // Retornar a view com os detalhes do produto
+    return view('site.cardapio.produto', compact('produto'));
+
+}
 }
