@@ -51,7 +51,7 @@ public function showProduto($slug)
 }
 
 public function show($id)
-    {
+{
         $filtroCategoria = Categoria::where('status_categoria', 'ATIVO')
             ->orderBy('ordem_categoria')
             ->get();
@@ -68,6 +68,6 @@ public function show($id)
             'listaProdutos',
             'categoriaAtiva'
         ));
-    }
+}
 
 }

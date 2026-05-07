@@ -30,11 +30,11 @@
                                      </div>
 
                                      <div class="other-options clearfix">
-                                         <div class="item-quantity">Quantity <input class="qty" type="number" value="1" name="quantity"></div>
-                                         <button type="button" class="theme-btn add-to-cart"><span class="btn-title">Add To Cart</span></button>
+                                         <div class="item-quantity">Quantidade <input class="qty" type="number" value="1" name="quantity"></div>
+                                         <button type="button" class="theme-btn add-to-cart"><span class="btn-title">Adicionar ao Carrinho</span></button>
                                          <ul class="product-meta">
-                                             <li class="posted_in">Category: <a href="#">Cake</a></li>
-                                             <li class="tagged_as">Tag: <a href="#">Nuts</a></li>
+                                             <!-- <li class="posted_in">Category: <a href="#">Cake</a></li>
+                                             <li class="tagged_as">Tag: <a href="#">Nuts</a></li> -->
                                          </ul>
                                      </div>
                                  </div>
@@ -66,7 +66,7 @@
 
                                      <!--Tab-->
                                      <div class="tab active-tab" id="prod-reviews">
-                                         <h2 class="title">2 reviews for Birthday Cake</h2>
+                                         <h2 class="title">2 Avaliações do {{ $produto->nome_produto }}</h2>
                                          <!--Reviews Container-->
                                          <div class="comments-area">
                                              <!--Comment Box-->
@@ -179,7 +179,7 @@
                                              <h4 class="name">
                                                  <a href="{{ route('cardapio.produto', $item->slug_produto) }}">{{ $item->nome_produto }}</a>
                                              </h4>
-                                             <div class="price">R$ {{ $item->valor_produto }}</div>
+                                             <div class="price">R$ {{ number_format($item->valor_produto, 2, ',', '.') }}</div>
                                          </div>
                                      </div>
                                  </div>
@@ -215,7 +215,7 @@
                                          <li class="cart-item">
                                              <img src="{{ asset('davilla/images/' . $produto->foto_produto) }}" alt="#" class="thumb" />
                                              <span class="item-name">{{ $produto->nome_produto }}</span>
-                                             <span class="item-quantity">1 x <span class="item-amount">{{ $produto->valor_produto }}</span></span>
+                                             <span class="item-quantity">1 x <span class="item-amount">R$ {{ number_format($item->valor_produto, 2, ',', '.') }}</span></span>
                                              <a href="shop-single.html" class="product-detail"></a>
                                              <button class="remove-item"><span class="fa fa-times"></span></button>
                                          </li>
@@ -223,7 +223,7 @@
                                          <li class="cart-item">
                                              <img src="{{ asset('davilla/images/' . $produto->foto_produto) }}" alt="#" class="thumb" />
                                              <span class="item-name">{{ $produto->nome_produto }}</span>
-                                             <span class="item-quantity">1 x <span class="item-amount">{{ $produto->valor_produto }}</span></span>
+                                             <span class="item-quantity">1 x <span class="item-amount">R$ {{ number_format($item->valor_produto, 2, ',', '.') }}</span></span>
                                              <a href="shop-single.html" class="product-detail"></a>
                                              <button class="remove-item"><span class="fa fa-times"></span></button>
                                          </li>
@@ -234,7 +234,8 @@
                                          <a href="cart.html" class="theme-btn">View Cart</a>
                                          <a href="checkout.html" class="theme-btn">Checkout</a>
                                      </div>
-                                 </div> <!--end shopping-cart -->
+                                 </div>
+                                 <!--end shopping-cart -->
                              </div>
                          </div>
 
