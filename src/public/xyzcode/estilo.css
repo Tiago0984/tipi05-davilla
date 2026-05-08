@@ -20,14 +20,14 @@
     width: 18%;
     max-width: 190px;
     height: auto;
-    left: 53.5%;
+    left: 54.5%;
     transform: translateX(-50%);
     top: -25px;
 }
 
 .sticky-header .logo {
     top: 1px;
-    left: 53.5%;
+    left: 54.5%;
     width: 8%;
 }
 
