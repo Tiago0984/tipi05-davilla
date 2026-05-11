@@ -18,6 +18,7 @@ class HomeController extends Controller
         $listaProdutos = Produto::with('CategoriaProduto')
             ->where('status_produto', 'ATIVO')
             ->orderBy('ordem_produto')
+            ->limit(8)
             ->get();
 
         $categoriaAtiva = 'all';
