@@ -22,7 +22,7 @@
              <h1>Processamento Mágico</h1>
              <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent molestie eu turpis nec<br> molestie. Nam auctor magna mauris, non lacinia felis mattis nec.</p>
              <div class="btn-box">
-                 <a href="#" class="theme-btn btn-style-one large"><span></span>Discover More<span></span></a>
+                 <a href="{{ route('cardapio') }}" class="theme-btn btn-style-one large"><span></span>Ver Cardapio<span></span></a>
              </div>
          </div>
      </div>

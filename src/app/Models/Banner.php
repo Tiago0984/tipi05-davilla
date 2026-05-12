@@ -14,4 +14,15 @@ class Banner extends Model
 
     // Se a tabela não tiver as colunas 'created_at' e 'updated_at'
     public $timestamps = true;
+
+    // Define os campos que podem ser preenchidos em massa
+    protected $fillable = [
+        'titulo_banner',
+        'descricao_banner',
+        'foto_banner',
+        'status_banner',
+        'nome_banner',
+        'subtitulo_banner',
+];
+
 }

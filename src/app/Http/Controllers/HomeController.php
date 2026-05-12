@@ -29,6 +29,11 @@ class HomeController extends Controller
             ->orderBy('ordem_banner', 'asc')
             ->get();
 
-        return view('site.home.home', compact('filtroCategoria', 'listaProdutos', 'categoriaAtiva', 'banners'));
+        $listaPrecos = Produto::where('status_produto', 'ATIVO')
+            ->inRandomOrder()
+            ->limit(4)
+            ->get();
+
+        return view('site.home.home', compact('filtroCategoria', 'listaProdutos', 'categoriaAtiva', 'banners', 'listaPrecos'));
     }
 }
