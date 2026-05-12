@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Produto;
 use App\Models\Categoria;
+use App\Models\Banner;
 
 use Illuminate\Http\Request;
 
@@ -17,12 +19,16 @@ class HomeController extends Controller
 
         $listaProdutos = Produto::with('CategoriaProduto')
             ->where('status_produto', 'ATIVO')
-            ->orderBy('ordem_produto')
+            ->inRandomOrder()
             ->limit(8)
             ->get();
 
         $categoriaAtiva = 'all';
 
-        return view('site.home.home', compact('filtroCategoria', 'listaProdutos', 'categoriaAtiva'));
+        $banners = Banner::where('status_banner', 'ATIVO')
+            ->orderBy('ordem_banner', 'asc')
+            ->get();
+
+        return view('site.home.home', compact('filtroCategoria', 'listaProdutos', 'categoriaAtiva', 'banners'));
     }
 }
