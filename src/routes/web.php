@@ -1,12 +1,17 @@
 <?php
 
-use App\Http\Controllers\CardapioController;
-use App\Http\Controllers\ContatoController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PedidosController;
-use App\Http\Controllers\RegiaoController;
-use App\Http\Controllers\SobreController;
+// SITE
+use App\Http\Controllers\Site\CardapioController;
+use App\Http\Controllers\Site\ContatoController;
+use App\Http\Controllers\Site\HomeController;
+use App\Http\Controllers\Site\PedidosController;
+use App\Http\Controllers\Site\RegiaoController;
+use App\Http\Controllers\Site\SobreController;
 use Illuminate\Support\Facades\Route;
+
+//ADMIN
+use App\Http\Controllers\Admin\DashController;
+
 
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
@@ -24,3 +29,11 @@ Route::get('/cardapio/produto/{slug}', [CardapioController::class, 'showProduto'
 
 // Rota para exibir o cardápio filtrado por região (Sub menu de região)
 Route::get('/regiao/regiao/{id}', [RegiaoController::class, 'show'])->name('regiao.area');
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    // Rotas para o painel administrativo
+    // Exemplo: Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+    Route::get('/', [DashController::class, 'index'])->name('dash');
+
+});

@@ -33,7 +33,7 @@
                                          <div class="item-quantity">Quantidade <input class="qty" type="number" value="1" name="quantity"></div>
                                          <button type="button" class="theme-btn add-to-cart"><span class="btn-title">Adicionar ao Carrinho</span></button>
                                          <ul class="product-meta">
-                                             <li class="posted_in">Categoria: <a href="#">{{ $produto->CategoriaProduto->nome_categoria }}</a></li>
+                                             <li class="posted_in">Categoria: <a href="{{ route('cardapio.categoria', $produto->CategoriaProduto->id_categoria) }}">{{ $produto->CategoriaProduto->nome_categoria }}</a></li>
                                              <!-- <li class="tagged_as">Tag: <a href="#">Nuts</a></li> -->
                                          </ul>
                                      </div>

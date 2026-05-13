@@ -15,23 +15,23 @@
                             <ul class="navigation menu-left clearfix">
                                 <li class="{{ request()->routeIs('home') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('home') }}">Home</a>
                                     <ul>
-                                        <li class="current"><a href="index.html">Cakes</a></li>
-                                        <li><a href="index-2.html">Lollipop</a></li>
-                                        <li><a href="index-3.html">Wedding</a></li>
-                                        <li><a href="index-4.html">Coffee</a></li>
-                                        <li><a href="index-5.html">Ice-Cream</a></li>
-                                        <li><a href="index-6.html">Macaron</a></li>
-                                        <li><a href="index-7.html">Shop</a></li>
-                                        <li><a href="index-8.html">Landing</a></li>
+                                        <!-- <li class="current"><a href="index.html">Cakes</a></li> -->
+                                        <!-- <li><a href="index-2.html">Lollipop</a></li> -->
+                                        <!-- <li><a href="index-3.html">Wedding</a></li> -->
+                                        <!-- <li><a href="index-4.html">Coffee</a></li> -->
+                                        <!-- <li><a href="index-5.html">Ice-Cream</a></li> -->
+                                        <!-- <li><a href="index-6.html">Macaron</a></li> -->
+                                        <!-- <li><a href="index-7.html">Shop</a></li> -->
+                                        <!-- <li><a href="index-8.html">Landing</a></li> -->
                                     </ul>
                                 </li>
                                 <li class="{{ request()->routeIs('sobre') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('sobre') }}">Sobre</a>
                                     <ul>
-                                        <li><a href="about-us.html">About Us</a></li>
-                                        <li><a href="our-staff.html">Our Staff</a></li>
-                                        <li><a href="pricing-tables.html">Pricing Tables</a></li>
-                                        <li><a href="content-elements.html">Content Elements</a></li>
-                                        <li><a href="recipes-list.html">Recipes Grid</a></li>
+                                        <!-- <li><a href="about-us.html">About Us</a></li> -->
+                                        <!-- <li><a href="our-staff.html">Our Staff</a></li> -->
+                                        <!-- <li><a href="pricing-tables.html">Pricing Tables</a></li> -->
+                                        <!-- <li><a href="content-elements.html">Content Elements</a></li> -->
+                                        <!-- <li><a href="recipes-list.html">Recipes Grid</a></li> -->
                                     </ul>
                                 </li>
                                 <li class="{{ request()->routeIs('cardapio') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('cardapio') }}">Cardápio</a>
@@ -48,27 +48,27 @@
                             <ul class="navigation menu-right clearfix">
                                 <li class="{{ request()->routeIs('pedidos') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('pedidos') }}">Pedidos</a>
                                     <ul>
-                                        <li><a href="blog-showcase.html">Checkerboard</a></li>
-                                        <li><a href="blog-standard.html">Standard</a></li>
-                                        <li><a href="blog-masonry.html">Masonry</a></li>
-                                        <li><a href="blog-masonry-full-width.html">Masonry Full Width</a></li>
-                                        <li><a href="blog-two-column.html">Two Columns Grid</a></li>
-                                        <li><a href="blog-three-column-wide.html">Three Columns Wide</a></li>
-                                        <li class="dropdown"><a href="#">Post Types</a>
+                                        <!-- <li><a href="blog-showcase.html">Checkerboard</a></li> -->
+                                        <!-- <li><a href="blog-standard.html">Standard</a></li> -->
+                                        <!-- <li><a href="blog-masonry.html">Masonry</a></li> -->
+                                        <!-- <li><a href="blog-masonry-full-width.html">Masonry Full Width</a></li> -->
+                                        <!-- <li><a href="blog-two-column.html">Two Columns Grid</a></li> -->
+                                        <!-- <li><a href="blog-three-column-wide.html">Three Columns Wide</a></li> -->
+                                        <!-- <li class="dropdown"><a href="#">Post Types</a> -->
                                             <ul>
-                                                <li><a href="blog-single.html">Standard Post</a></li>
-                                                <li><a href="blog-single-2.html">Gallery Post</a></li>
-                                                <li><a href="blog-single-3.html">Video Post</a></li>
-                                                <li><a href="blog-single-4.html">Audio Post</a></li>
-                                                <li><a href="blog-single-5.html">Quote Post</a></li>
-                                                <li><a href="blog-single-6.html">Link Post</a></li>
+                                                <!-- <li><a href="blog-single.html">Standard Post</a></li> -->
+                                                <!-- <li><a href="blog-single-2.html">Gallery Post</a></li> -->
+                                                <!-- <li><a href="blog-single-3.html">Video Post</a></li> -->
+                                                <!-- <li><a href="blog-single-4.html">Audio Post</a></li> -->
+                                                <!-- <li><a href="blog-single-5.html">Quote Post</a></li> -->
+                                                <!-- <li><a href="blog-single-6.html">Link Post</a></li> -->
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="{{ request()->routeIs('regiao') ? 'current dropdown' : 'dropdown' }}"><a href="{{ route('regiao') }}">Região</a>
                                     <ul>
-                                        <li><a href="shop.html">Shop</a></li>
+                                        <!-- <li><a href="shop.html">Shop</a></li> -->
                                        
                                     </ul>
                                 </li>

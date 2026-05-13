@@ -31,7 +31,9 @@
                              <li><span>{{ $linha->unid_medida_produto ?? '' }}</span></li>
                              <li><span>{{ $linha->status_produto ?? '' }} </span></li>
                              @if($linha->destaque_produto == 'SIM')
-                             <div class="selo-recomendado">⭐ Recomendado Davilla</div>
+                             <li><span>🍰 Recomendado Davila</span></li>
+                             @else
+                             <li><span>⭐ Mais vendidos </span></li>
                              @endif
                          </ul>
                      </div>
