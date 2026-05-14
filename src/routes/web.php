@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 //ADMIN
 use App\Http\Controllers\Admin\DashController;
+use App\Http\Controllers\Admin\CategoriaController;
 
 
 
@@ -35,5 +36,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Exemplo: Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
     Route::get('/', [DashController::class, 'index'])->name('dash');
+
+    // Rota para a página de categorias
+    Route::get('/categorias', [CategoriaController::class, 'index'])->name('categoria.index');
 
 });
