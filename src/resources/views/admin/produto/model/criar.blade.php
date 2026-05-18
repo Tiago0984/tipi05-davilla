@@ -16,3 +16,17 @@
     </div>
   </div>
 </div>
+
+<div id="modalFoto" onclick="this.style.display='none'"
+  style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+            background:rgba(0,0,0,0.8); z-index:9999; 
+            justify-content:center; align-items:center; cursor:pointer;">
+  <img id="modalFotoImg" src="" style="max-width:90%; max-height:90%; border-radius:8px;">
+
+  <script>
+    function abrirFoto(src) {
+      document.getElementById('modalFotoImg').src = src;
+      document.getElementById('modalFoto').style.display = 'flex';
+    }
+  </script>
+</div>
