@@ -1,12 +1,14 @@
 @extends('layout.admin')
 
-@section('title', 'Categoria | Confeitaria Dashboard')
+@section('title', 'Produtos | Confeitaria Dashboard')
 
-@section('pg-titulo', 'Categoria')
+@section('pg-titulo', 'Produtos')
 
-@section('link-topo', 'Categoria')
+@section('link-topo', 'Produtos')
 
 @section('content')
+
+@include('admin.produto.model.criar')
 
 <div class="app-content">
     <!--begin::Container-->
@@ -75,7 +77,5 @@
         </div>
     </div>
 </div>
-
-@include('admin.categoria.model.criar')
 
 @endsection

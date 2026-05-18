@@ -10,12 +10,13 @@
     <div class="app-wrapper">
         @include('admin.partials.app-header')
 
-        @include('admin.partials.app-sidebar')       
+        @include('admin.partials.app-sidebar')
 
         <main class="app-main">
+            @include('admin.partials.content-header')
             @yield('content')
         </main>
-        
+
 
         @include('admin.partials.app-footer')
 

@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 //ADMIN
 use App\Http\Controllers\Admin\DashController;
 use App\Http\Controllers\Admin\CategoriaController;
+use App\Http\Controllers\Admin\ProdutoController;
 
 
 
@@ -39,5 +40,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     // Rota para a página de categorias
     Route::get('/categorias', [CategoriaController::class, 'index'])->name('categoria.index');
+
+    // Rota para a página de produtos
+    Route::get('/produtos', [ProdutoController::class, 'index'])->name('produto.index');
 
 });
