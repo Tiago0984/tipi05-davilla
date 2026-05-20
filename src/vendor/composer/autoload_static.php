@@ -521,7 +521,19 @@ class ComposerStaticInitc57754c93ae34ac3b9b716a0fd2f2149
     );
 
     public static $classMap = array (
+        'App\\Http\\Controllers\\Admin\\CategoriaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CategoriaController.php',
+        'App\\Http\\Controllers\\Admin\\DashController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashController.php',
+        'App\\Http\\Controllers\\Admin\\ProdutoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProdutoController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Site\\CardapioController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/CardapioController.php',
+        'App\\Http\\Controllers\\Site\\ContatoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/ContatoController.php',
+        'App\\Http\\Controllers\\Site\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/HomeController.php',
+        'App\\Http\\Controllers\\Site\\PedidosController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/PedidosController.php',
+        'App\\Http\\Controllers\\Site\\RegiaoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/RegiaoController.php',
+        'App\\Http\\Controllers\\Site\\SobreController' => __DIR__ . '/../..' . '/app/Http/Controllers/Site/SobreController.php',
+        'App\\Models\\Banner' => __DIR__ . '/../..' . '/app/Models/Banner.php',
+        'App\\Models\\Categoria' => __DIR__ . '/../..' . '/app/Models/Categoria.php',
+        'App\\Models\\Produto' => __DIR__ . '/../..' . '/app/Models/Produto.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

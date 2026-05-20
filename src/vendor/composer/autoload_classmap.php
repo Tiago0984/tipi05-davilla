@@ -6,7 +6,19 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Http\\Controllers\\Admin\\CategoriaController' => $baseDir . '/app/Http/Controllers/Admin/CategoriaController.php',
+    'App\\Http\\Controllers\\Admin\\DashController' => $baseDir . '/app/Http/Controllers/Admin/DashController.php',
+    'App\\Http\\Controllers\\Admin\\ProdutoController' => $baseDir . '/app/Http/Controllers/Admin/ProdutoController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\Site\\CardapioController' => $baseDir . '/app/Http/Controllers/Site/CardapioController.php',
+    'App\\Http\\Controllers\\Site\\ContatoController' => $baseDir . '/app/Http/Controllers/Site/ContatoController.php',
+    'App\\Http\\Controllers\\Site\\HomeController' => $baseDir . '/app/Http/Controllers/Site/HomeController.php',
+    'App\\Http\\Controllers\\Site\\PedidosController' => $baseDir . '/app/Http/Controllers/Site/PedidosController.php',
+    'App\\Http\\Controllers\\Site\\RegiaoController' => $baseDir . '/app/Http/Controllers/Site/RegiaoController.php',
+    'App\\Http\\Controllers\\Site\\SobreController' => $baseDir . '/app/Http/Controllers/Site/SobreController.php',
+    'App\\Models\\Banner' => $baseDir . '/app/Models/Banner.php',
+    'App\\Models\\Categoria' => $baseDir . '/app/Models/Categoria.php',
+    'App\\Models\\Produto' => $baseDir . '/app/Models/Produto.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

@@ -14,6 +14,18 @@
         <!--begin::Row-->
         <div class="row">
 
+            @if (session('success'))
+            <div class="alert alert-success" id="alertSucesso" role="alert">
+                {{ session('success') }}
+            </div>
+            @endif
+
+            @if ($errors->any())
+            <div class="alert alert-danger" id="alertErro" role="alert">
+                <strong>Atenção</strong> verifique os campos do formulário.
+            </div>
+            @endif
+
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Gerenciamento de categorias</h3>
@@ -51,15 +63,32 @@
                                 <span class="badge text-bg-danger">Inativo</span>
                                 @endif
                             </td>
-                            <td>  
-
+                            <td>
+                                <!-- EDITAR -->
                                 <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditarCategoria{{ $linha->id_categoria }}">
                                     <i class="bi bi-pencil"></i>
                                 </button>
 
-                                 <button type="button" class="btn btn-danger">
-                                    <i class="bi bi-trash"></i>
-                                </button>
+                                <!-- DESATIVAR -->
+                                @if ($linha->status_categoria == 'ATIVO')
+                                <form action="{{ route('admin.categoria.desativar', $linha->id_categoria) }}" method="post">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+
+                                @else
+                                <form action="{{ route('admin.categoria.ativar', $linha->id_categoria) }}" method="post">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="bi bi-arrow-clockwise"></i>
+                                    </button>
+                                </form>
+                                @endif
+
 
                             </td>
                         </tr>
@@ -75,6 +104,31 @@
         </div>
     </div>
 </div>
+
+<script>
+    // ALERTA SUCESSO
+    setTimeout(function() {
+
+        let alertaSucesso = document.getElementById('alertSucesso');
+
+        if (alertaSucesso) {
+            alertaSucesso.style.display = 'none';
+        }
+
+    }, 3000); // 3 segundos
+
+
+    // ALERTA ERRO
+    setTimeout(function() {
+
+        let alertaErro = document.getElementById('alertErro');
+
+        if (alertaErro) {
+            alertaErro.style.display = 'none';
+        }
+
+    }, 3000); // 3 segundos
+</script>
 
 @include('admin.categoria.model.criar')
 
