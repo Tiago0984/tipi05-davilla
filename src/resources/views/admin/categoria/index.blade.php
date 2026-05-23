@@ -116,28 +116,33 @@
 </div>
 
 <script>
+    // Função que faz o elemento desaparecer suavemente
+    function sumirSuavemente(idElemento) {
+        let alerta = document.getElementById(idElemento);
+
+        if (alerta) {
+            // 1. Adiciona a transição no estilo do elemento (dura meio segundo)
+            alerta.style.transition = 'opacity 0.5s ease';
+
+            // 2. Muda a opacidade para 0 (faz ele ficar transparente suavemente)
+            alerta.style.opacity = '0';
+
+            // 3. Espera os 500ms da animação terminarem e então remove o espaço dele na tela
+            setTimeout(function() {
+                alerta.style.display = 'none';
+            }, 500);
+        }
+    }
+
     // ALERTA SUCESSO
     setTimeout(function() {
-
-        let alertaSucesso = document.getElementById('alertSucesso');
-
-        if (alertaSucesso) {
-            alertaSucesso.style.display = 'none';
-        }
-
-    }, 3000); // 3 segundos
-
+        sumirSuavemente('alertSucesso');
+    }, 3000); // Inicia após 3 segundos
 
     // ALERTA ERRO
     setTimeout(function() {
-
-        let alertaErro = document.getElementById('alertErro');
-
-        if (alertaErro) {
-            alertaErro.style.display = 'none';
-        }
-
-    }, 3000); // 3 segundos
+        sumirSuavemente('alertErro');
+    }, 3000); // Inicia após 3 segundos
 </script>
 
 @include('admin.categoria.model.criar')
