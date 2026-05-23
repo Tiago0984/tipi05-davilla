@@ -64,32 +64,42 @@
                                 @endif
                             </td>
                             <td>
-                                <!-- EDITAR -->
-                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditarCategoria{{ $linha->id_categoria }}">
-                                    <i class="bi bi-pencil"></i>
-                                </button>
+                                <div class="d-flex align-items-center gap-2">
 
-                                <!-- DESATIVAR -->
-                                @if ($linha->status_categoria == 'ATIVO')
-                                <form action="{{ route('admin.categoria.desativar', $linha->id_categoria) }}" method="post">
-                                    @csrf
-                                    @method('PATCH')
-                                    <button type="submit" class="btn btn-danger">
-                                        <i class="bi bi-trash"></i>
+                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditarCategoria{{ $linha->id_categoria }}">
+                                        <i class="bi bi-pencil"></i>
                                     </button>
-                                </form>
 
-                                @else
-                                <form action="{{ route('admin.categoria.ativar', $linha->id_categoria) }}" method="post">
-                                    @csrf
-                                    @method('PATCH')
-                                    <button type="submit" class="btn btn-success">
-                                        <i class="bi bi-arrow-clockwise"></i>
-                                    </button>
-                                </form>
-                                @endif
+                                    @if ($linha->status_categoria == 'ATIVO')
+                                    <form action="{{ route('admin.categoria.desativar', $linha->id_categoria) }}" method="post" class="m-0">
+                                        @csrf
+                                        @method('PATCH')
+                                        <div class="form-check form-switch fs-5 m-0">
+                                            <input class="form-check-input bg-success"
+                                                type="checkbox"
+                                                role="switch"
+                                                checked
+                                                onchange="this.form.submit()"
+                                                style="cursor: pointer;"
+                                                title="Clique para desativar">
+                                        </div>
+                                    </form>
+                                    @else
+                                    <form action="{{ route('admin.categoria.ativar', $linha->id_categoria) }}" method="post" class="m-0">
+                                        @csrf
+                                        @method('PATCH')
+                                        <div class="form-check form-switch fs-5 m-0">
+                                            <input class="form-check-input bg-danger"
+                                                type="checkbox"
+                                                role="switch"
+                                                onchange="this.form.submit()"
+                                                style="cursor: pointer;"
+                                                title="Clique para ativar">
+                                        </div>
+                                    </form>
+                                    @endif
 
-
+                                </div>
                             </td>
                         </tr>
                         @empty
