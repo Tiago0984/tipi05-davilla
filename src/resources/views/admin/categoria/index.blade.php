@@ -64,41 +64,42 @@
                                 @endif
                             </td>
                             <td>
-                                <!-- EDITAR -->
-                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditarCategoria{{ $linha->id_categoria }}">
-                                    <i class="bi bi-pencil"></i>
-                                </button>
+                                <div class="d-flex align-items-center gap-2">
 
-                                <!-- DESATIVAR -->
-                                @if ($linha->status_categoria == 'ATIVO')
-                                <form action="{{ route('admin.categoria.desativar', $linha->id_categoria) }}" method="post" class="d-inline-block m-0">
-                                    @csrf
-                                    @method('PATCH')
-                                    <div class="form-check form-switch fs-5 mb-0">
-                                        <input class="form-check-input bg-success"
-                                            type="checkbox"
-                                            role="switch"
-                                            checked
-                                            onchange="this.form.submit()"
-                                            style="cursor: pointer;"
-                                            title="Clique para desativar">
-                                    </div>
-                                </form>
-                                @else
-                                <form action="{{ route('admin.categoria.ativar', $linha->id_categoria) }}" method="post" class="d-inline-block m-0">
-                                    @csrf
-                                    @method('PATCH')
-                                    <div class="form-check form-switch fs-5 mb-0">
-                                        <input class="form-check-input bg-danger"
-                                            type="checkbox"
-                                            role="switch"
-                                            onchange="this.form.submit()"
-                                            style="cursor: pointer;"
-                                            title="Clique para ativar">
-                                    </div>
-                                </form>
-                                @endif
+                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditarCategoria{{ $linha->id_categoria }}">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
 
+                                    @if ($linha->status_categoria == 'ATIVO')
+                                    <form action="{{ route('admin.categoria.desativar', $linha->id_categoria) }}" method="post" class="m-0">
+                                        @csrf
+                                        @method('PATCH')
+                                        <div class="form-check form-switch fs-5 m-0">
+                                            <input class="form-check-input bg-success"
+                                                type="checkbox"
+                                                role="switch"
+                                                checked
+                                                onchange="this.form.submit()"
+                                                style="cursor: pointer;"
+                                                title="Clique para desativar">
+                                        </div>
+                                    </form>
+                                    @else
+                                    <form action="{{ route('admin.categoria.ativar', $linha->id_categoria) }}" method="post" class="m-0">
+                                        @csrf
+                                        @method('PATCH')
+                                        <div class="form-check form-switch fs-5 m-0">
+                                            <input class="form-check-input bg-danger"
+                                                type="checkbox"
+                                                role="switch"
+                                                onchange="this.form.submit()"
+                                                style="cursor: pointer;"
+                                                title="Clique para ativar">
+                                        </div>
+                                    </form>
+                                    @endif
+
+                                </div>
                             </td>
                         </tr>
                         @empty
@@ -115,28 +116,33 @@
 </div>
 
 <script>
+    // Função que faz o elemento desaparecer suavemente
+    function sumirSuavemente(idElemento) {
+        let alerta = document.getElementById(idElemento);
+
+        if (alerta) {
+            // 1. Adiciona a transição no estilo do elemento (dura meio segundo)
+            alerta.style.transition = 'opacity 0.5s ease';
+
+            // 2. Muda a opacidade para 0 (faz ele ficar transparente suavemente)
+            alerta.style.opacity = '0';
+
+            // 3. Espera os 500ms da animação terminarem e então remove o espaço dele na tela
+            setTimeout(function() {
+                alerta.style.display = 'none';
+            }, 500);
+        }
+    }
+
     // ALERTA SUCESSO
     setTimeout(function() {
-
-        let alertaSucesso = document.getElementById('alertSucesso');
-
-        if (alertaSucesso) {
-            alertaSucesso.style.display = 'none';
-        }
-
-    }, 3000); // 3 segundos
-
+        sumirSuavemente('alertSucesso');
+    }, 3000); // Inicia após 3 segundos
 
     // ALERTA ERRO
     setTimeout(function() {
-
-        let alertaErro = document.getElementById('alertErro');
-
-        if (alertaErro) {
-            alertaErro.style.display = 'none';
-        }
-
-    }, 3000); // 3 segundos
+        sumirSuavemente('alertErro');
+    }, 3000); // Inicia após 3 segundos
 </script>
 
 @include('admin.categoria.model.criar')
