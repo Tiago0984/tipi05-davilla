@@ -71,24 +71,33 @@
 
                                 <!-- DESATIVAR -->
                                 @if ($linha->status_categoria == 'ATIVO')
-                                <form action="{{ route('admin.categoria.desativar', $linha->id_categoria) }}" method="post">
+                                <form action="{{ route('admin.categoria.desativar', $linha->id_categoria) }}" method="post" class="d-inline-block m-0">
                                     @csrf
                                     @method('PATCH')
-                                    <button type="submit" class="btn btn-danger">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
+                                    <div class="form-check form-switch fs-5 mb-0">
+                                        <input class="form-check-input bg-success"
+                                            type="checkbox"
+                                            role="switch"
+                                            checked
+                                            onchange="this.form.submit()"
+                                            style="cursor: pointer;"
+                                            title="Clique para desativar">
+                                    </div>
                                 </form>
-
                                 @else
-                                <form action="{{ route('admin.categoria.ativar', $linha->id_categoria) }}" method="post">
+                                <form action="{{ route('admin.categoria.ativar', $linha->id_categoria) }}" method="post" class="d-inline-block m-0">
                                     @csrf
                                     @method('PATCH')
-                                    <button type="submit" class="btn btn-success">
-                                        <i class="bi bi-arrow-clockwise"></i>
-                                    </button>
+                                    <div class="form-check form-switch fs-5 mb-0">
+                                        <input class="form-check-input bg-danger"
+                                            type="checkbox"
+                                            role="switch"
+                                            onchange="this.form.submit()"
+                                            style="cursor: pointer;"
+                                            title="Clique para ativar">
+                                    </div>
                                 </form>
                                 @endif
-
 
                             </td>
                         </tr>
