@@ -41,6 +41,7 @@ class CategoriaController extends Controller
             ->with('success', 'Categoria criada com sucesso!');
     }
 
+    // Método para desativar uma categoria existente
     public function desativar($id)
     {
         // Buscar a categoria pelo ID
@@ -54,7 +55,7 @@ class CategoriaController extends Controller
             ->route('admin.categoria.index')
             ->with('success', 'Categoria desativada com sucesso!');
     }
-
+    // Método para ativar uma categoria existente
     public function ativar($id)
     {
         // Buscar a categoria pelo ID
@@ -67,5 +68,32 @@ class CategoriaController extends Controller
         return redirect()
             ->route('admin.categoria.index')
             ->with('success', 'Categoria ativada com sucesso!');
+    }
+
+    // Método para atualizar uma categoria existente
+    public function update(Request $request, $id)
+    {
+        // Validação dos dados recebidos do formulário
+        $request->validate([
+            'nome_categoria'         => 'required|string|max:30',
+            'descricao_categoria'    => 'required|string',
+            'ordem_categoria'        => 'required|integer',
+            'status_categoria'       => 'required|in:ATIVO,INATIVO',
+        ]);
+
+        // Buscar a categoria pelo ID
+        $categoria = Categoria::findOrFail($id);
+
+        // Atualizar os dados da categoria
+        $categoria->update([
+            'nome_categoria'         => $request->nome_categoria,
+            'descricao_categoria'    => $request->descricao_categoria,
+            'ordem_categoria'        => $request->ordem_categoria,
+            'status_categoria'       => $request->status_categoria,
+        ]);
+
+        return redirect()
+            ->route('admin.categoria.index')
+            ->with('success', 'Categoria atualizada com sucesso!');
     }
 }

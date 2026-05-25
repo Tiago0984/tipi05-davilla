@@ -66,9 +66,10 @@
                             <td>
                                 <div class="d-flex align-items-center gap-2">
 
-                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditarCategoria{{ $linha->id_categoria }}">
+                                    <button type="button" class="bi bi-arrow-counterclockwise" data-bs-toggle="modal" data-bs-target="#modalEditarCategoria{{ $linha->id_categoria }}">
                                         <i class="bi bi-pencil"></i>
                                     </button>
+
 
                                     @if ($linha->status_categoria == 'ATIVO')
                                     <form action="{{ route('admin.categoria.desativar', $linha->id_categoria) }}" method="post" class="m-0">
@@ -102,6 +103,7 @@
                                 </div>
                             </td>
                         </tr>
+                        @include('admin.categoria.model.editar', ['categoria' => $linha])
                         @empty
                         <tr>
                             <td>Nenhuma categoria cadastrada.</td>

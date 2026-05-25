@@ -41,13 +41,23 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Rota para a página de categorias
     Route::get('/categorias', [CategoriaController::class, 'index'])->name('categoria.index');
     Route::post('/categorias', [CategoriaController::class, 'store'])->name('categoria.store');
+
+    // Rota para desativar e ativar categorias
     Route::patch('/categorias/{id}/desativar', [CategoriaController::class, 'desativar'])
     ->name('categoria.desativar');
     Route::patch('/categorias/{id}/ativar', [CategoriaController::class, 'ativar'])
     ->name('categoria.ativar');
 
+    // Rota para atualizar categorias
+    Route::put('/categorias/{id}', [CategoriaController::class, 'update'])->name('categoria.update');
+
 
 
     // Rota para a página de produtos
     Route::get('/produtos', [ProdutoController::class, 'index'])->name('produto.index');
+
+    // Rota para criar um novo produto
+    Route::post('/produtos', [ProdutoController::class, 'store'])->name('produto.store');
+
+
 });
