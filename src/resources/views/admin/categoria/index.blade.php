@@ -66,11 +66,7 @@
                             <td>
                                 <div class="d-flex align-items-center gap-2">
 
-<<<<<<< HEAD
                                     <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditarCategoria{{ $linha->id_categoria }}">
-=======
-                                    <button type="button" class="bi bi-arrow-counterclockwise" data-bs-toggle="modal" data-bs-target="#modalEditarCategoria{{ $linha->id_categoria }}">
->>>>>>> 1e56b113d12b6a31cd9ead1f38408416e770297c
                                         <i class="bi bi-pencil"></i>
                                     </button>
 
@@ -103,38 +99,6 @@
                                     </form>
                                     @endif
 
-<<<<<<< HEAD
-=======
-                                    @if ($linha->status_categoria == 'ATIVO')
-                                    <form action="{{ route('admin.categoria.desativar', $linha->id_categoria) }}" method="post" class="m-0">
-                                        @csrf
-                                        @method('PATCH')
-                                        <div class="form-check form-switch fs-5 m-0">
-                                            <input class="form-check-input bg-success"
-                                                type="checkbox"
-                                                role="switch"
-                                                checked
-                                                onchange="this.form.submit()"
-                                                style="cursor: pointer;"
-                                                title="Clique para desativar">
-                                        </div>
-                                    </form>
-                                    @else
-                                    <form action="{{ route('admin.categoria.ativar', $linha->id_categoria) }}" method="post" class="m-0">
-                                        @csrf
-                                        @method('PATCH')
-                                        <div class="form-check form-switch fs-5 m-0">
-                                            <input class="form-check-input bg-danger"
-                                                type="checkbox"
-                                                role="switch"
-                                                onchange="this.form.submit()"
-                                                style="cursor: pointer;"
-                                                title="Clique para ativar">
-                                        </div>
-                                    </form>
-                                    @endif
-
->>>>>>> 1e56b113d12b6a31cd9ead1f38408416e770297c
                                 </div>
                             </td>
                         </tr>
