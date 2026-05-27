@@ -18,7 +18,7 @@ class ProdutoController extends Controller
 
         // 2. BUSCA AS CATEGORIAS NO BANCO (Esta é a linha que faltava!)
         $categorias = Categoria::orderBy('nome_categoria')->get();
-        
+
         // 3. Envia os produtos E as categorias para a View
         return view('admin.produto.index', compact('produtos', 'categorias'));
     }
@@ -48,12 +48,12 @@ class ProdutoController extends Controller
 
         // Gerenciamento do Upload da Foto
         $foto = $request->file('foto_produto');
-        $nomeFoto = 'produto/' . $foto->hashName();
+        $nomeFoto = 'produto/' . $foto->getClientOriginalName();
 
 
         // Docker Check: Garante que a estrutura de pastas existe antes de mover o arquivo
-        File::ensureDirectoryExists(base_path('public/davilla/images/produto'));
-        $foto->move(base_path('public/davilla/images/produto'), $foto->hashName());
+        File::ensureDirectoryExists(public_path('davilla/images/produto'));
+        $foto->move(public_path('davilla/images/produto'), $foto->getClientOriginalName());
 
         // Criação do registro mapeando todos os inputs do formulário
         Produto::create([

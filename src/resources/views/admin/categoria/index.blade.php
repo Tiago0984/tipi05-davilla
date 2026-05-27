@@ -66,11 +66,8 @@
                             <td>
                                 <div class="d-flex align-items-center gap-2">
 
-<<<<<<< HEAD
                                     <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditarCategoria{{ $linha->id_categoria }}">
-=======
                                     <button type="button" class="bi bi-arrow-counterclockwise" data-bs-toggle="modal" data-bs-target="#modalEditarCategoria{{ $linha->id_categoria }}">
->>>>>>> 1e56b113d12b6a31cd9ead1f38408416e770297c
                                         <i class="bi bi-pencil"></i>
                                     </button>
 
@@ -103,8 +100,6 @@
                                     </form>
                                     @endif
 
-<<<<<<< HEAD
-=======
                                     @if ($linha->status_categoria == 'ATIVO')
                                     <form action="{{ route('admin.categoria.desativar', $linha->id_categoria) }}" method="post" class="m-0">
                                         @csrf
@@ -134,7 +129,6 @@
                                     </form>
                                     @endif
 
->>>>>>> 1e56b113d12b6a31cd9ead1f38408416e770297c
                                 </div>
                             </td>
                         </tr>
