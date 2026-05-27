@@ -30,7 +30,7 @@
                 <div class="card-header">
                     <h3 class="card-title">Gerenciamento de categorias</h3>
                     <div class="card-tools">
-                        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#modalNovaCategoria">
                             <i class="bi bi-plus-circle"></i>
                             Nova Categoria
                         </button>
