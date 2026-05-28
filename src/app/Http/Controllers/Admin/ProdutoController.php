@@ -73,4 +73,24 @@ class ProdutoController extends Controller
         return to_route('admin.produto.index')
             ->with('success', 'Produto criado com sucesso!');
     }
+
+    // Métodos para desativar produtos (semelhantes aos de categoria)
+    public function desativar($id)
+    {
+        $produto = Produto::findOrFail($id);
+        $produto->update(['status_produto' => 'INATIVO']);
+
+        return to_route('admin.produto.index')
+            ->with('success', 'Produto desativado com sucesso!');
+    }
+
+    // Métodos para ativar produtos (semelhantes aos de categoria)
+    public function ativar($id)
+    {
+        $produto = Produto::findOrFail($id);
+        $produto->update(['status_produto' => 'ATIVO']);
+
+        return to_route('admin.produto.index')
+            ->with('success', 'Produto ativado com sucesso!');
+    }
 }

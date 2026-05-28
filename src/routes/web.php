@@ -59,5 +59,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Rota para criar um novo produto
     Route::post('/produtos', [ProdutoController::class, 'store'])->name('produto.store');
 
+    // Rota para atualizar um produto existente
+    Route::put('/produtos/{id}', [ProdutoController::class, 'update'])->name('produto.update');
+    // Rota para desativar um produto existente
+    Route::patch('/produtos/{id}/desativar', [ProdutoController::class, 'desativar'])->name('produto.desativar');
+    // Rota para ativar um produto existente
+    Route::patch('/produtos/{id}/ativar', [ProdutoController::class, 'ativar'])->name('produto.ativar');
+
 
 });
