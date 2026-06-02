@@ -1,6 +1,8 @@
 <?php
 
 // SITE
+
+use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Site\CardapioController;
 use App\Http\Controllers\Site\ContatoController;
 use App\Http\Controllers\Site\HomeController;
@@ -32,39 +34,53 @@ Route::get('/cardapio/produto/{slug}', [CardapioController::class, 'showProduto'
 // Rota para exibir o cardápio filtrado por região (Sub menu de região)
 Route::get('/regiao/regiao/{id}', [RegiaoController::class, 'show'])->name('regiao.area');
 
+
+// INICIO PREFIXO ADMIN
 Route::prefix('admin')->name('admin.')->group(function () {
-    // Rotas para o painel administrativo
-    // Exemplo: Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
-    Route::get('/', [DashController::class, 'index'])->name('dash');
-
-    // Rota para a página de categorias
-    Route::get('/categorias', [CategoriaController::class, 'index'])->name('categoria.index');
-    Route::post('/categorias', [CategoriaController::class, 'store'])->name('categoria.store');
-
-    // Rota para desativar e ativar categorias
-    Route::patch('/categorias/{id}/desativar', [CategoriaController::class, 'desativar'])
-    ->name('categoria.desativar');
-    Route::patch('/categorias/{id}/ativar', [CategoriaController::class, 'ativar'])
-    ->name('categoria.ativar');
-
-    // Rota para atualizar categorias
-    Route::put('/categorias/{id}', [CategoriaController::class, 'update'])->name('categoria.update');
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/login', [AuthController::class, 'autenticar'])->name('login.autenticar');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 
-    // Rota para a página de produtos
-    Route::get('/produtos', [ProdutoController::class, 'index'])->name('produto.index');
+    /*##########################################
+    //ROTAS PROTEGIDAS POR AUTENTICAÇÃO:
+    ##########################################*/
 
-    // Rota para criar um novo produto
-    Route::post('/produtos', [ProdutoController::class, 'store'])->name('produto.store');
+    Route::middleware('auth:admin')->group(function () {
 
-    // Rota para atualizar um produto existente
-    Route::put('/produtos/{id}', [ProdutoController::class, 'update'])->name('produto.update');
-    // Rota para desativar um produto existente
-    Route::patch('/produtos/{id}/desativar', [ProdutoController::class, 'desativar'])->name('produto.desativar');
-    // Rota para ativar um produto existente
-    Route::patch('/produtos/{id}/ativar', [ProdutoController::class, 'ativar'])->name('produto.ativar');
+        // Rotas para o painel administrativo
+        // Exemplo: Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+        Route::get('/', [DashController::class, 'index'])->name('dash');
+
+        // Rota para a página de categorias
+        Route::get('/categorias', [CategoriaController::class, 'index'])->name('categoria.index');
+        Route::post('/categorias', [CategoriaController::class, 'store'])->name('categoria.store');
+
+        // Rota para desativar e ativar categorias
+        Route::patch('/categorias/{id}/desativar', [CategoriaController::class, 'desativar'])
+            ->name('categoria.desativar');
+        Route::patch('/categorias/{id}/ativar', [CategoriaController::class, 'ativar'])
+            ->name('categoria.ativar');
+
+        // Rota para atualizar categorias
+        Route::put('/categorias/{id}', [CategoriaController::class, 'update'])->name('categoria.update');
 
 
+
+        // Rota para a página de produtos
+        Route::get('/produtos', [ProdutoController::class, 'index'])->name('produto.index');
+
+        // Rota para criar um novo produto
+        Route::post('/produtos', [ProdutoController::class, 'store'])->name('produto.store');
+
+        // Rota para atualizar um produto existente
+        Route::put('/produtos/{id}', [ProdutoController::class, 'update'])->name('produto.update');
+        // Rota para desativar um produto existente
+        Route::patch('/produtos/{id}/desativar', [ProdutoController::class, 'desativar'])->name('produto.desativar');
+        // Rota para ativar um produto existente
+        Route::patch('/produtos/{id}/ativar', [ProdutoController::class, 'ativar'])->name('produto.ativar');
+    });
 });
