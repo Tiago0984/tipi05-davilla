@@ -92,8 +92,16 @@
 
             <div class="mb-3">
               <label for="foto_produto" class="form-label fw-bold">Foto do Produto</label>
-              <input type="file" class="form-control" id="foto_produto" name="foto_produto" accept="image/png,image/jpeg,image/webp" required>
-              <div class="form-text">Selecione uma imagem quadrada (JPG, PNG, WEBP) de até 2MB</div>
+              <div class="d-flex align-items-start gap-3">
+                <div id="preview-criar" style="width:120px; height:120px; border:2px dashed #ccc; border-radius:8px; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:#f8f9fa; overflow:hidden;">
+                  <span id="preview-criar-placeholder" class="text-muted text-center" style="font-size:0.75rem; padding:8px;">Pré-visualização</span>
+                  <img id="preview-criar-img" src="" alt="Preview" style="display:none; width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="flex-grow-1">
+                  <input type="file" class="form-control" id="foto_produto" name="foto_produto" accept="image/png,image/jpeg,image/webp" required>
+                  <div class="form-text">Selecione uma imagem quadrada (JPG, PNG, WEBP) de até 2MB</div>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -108,6 +116,33 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.getElementById('foto_produto').addEventListener('change', function () {
+    const file = this.files[0];
+    const img = document.getElementById('preview-criar-img');
+    const placeholder = document.getElementById('preview-criar-placeholder');
+    const box = document.getElementById('preview-criar');
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        img.src = e.target.result;
+        img.style.display = 'block';
+        placeholder.style.display = 'none';
+        box.style.borderColor = '#0d6efd';
+        box.style.borderStyle = 'solid';
+      };
+      reader.readAsDataURL(file);
+    } else {
+      img.src = '';
+      img.style.display = 'none';
+      placeholder.style.display = 'block';
+      box.style.borderColor = '#ccc';
+      box.style.borderStyle = 'dashed';
+    }
+  });
+</script>
 
 <div id="modalFoto" onclick="this.style.display='none'"
   style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
