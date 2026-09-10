@@ -521,6 +521,7 @@ class ComposerStaticInitc57754c93ae34ac3b9b716a0fd2f2149
     );
 
     public static $classMap = array (
+        'App\\Http\\Controllers\\Admin\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AuthController.php',
         'App\\Http\\Controllers\\Admin\\CategoriaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CategoriaController.php',
         'App\\Http\\Controllers\\Admin\\DashController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashController.php',
         'App\\Http\\Controllers\\Admin\\ProdutoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProdutoController.php',
@@ -535,6 +536,7 @@ class ComposerStaticInitc57754c93ae34ac3b9b716a0fd2f2149
         'App\\Models\\Categoria' => __DIR__ . '/../..' . '/app/Models/Categoria.php',
         'App\\Models\\Produto' => __DIR__ . '/../..' . '/app/Models/Produto.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\Usuario' => __DIR__ . '/../..' . '/app/Models/Usuario.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
