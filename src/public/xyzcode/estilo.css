@@ -7,11 +7,18 @@
 }
 
 .testimonial-block .testimonial_img .thumb-box {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
     text-align: center;
+    overflow: hidden;
+    border-radius: 50%;
 }
 
 .testimonial-block .testimonial_img .thumb-box img {
-    width: 70%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
     margin: 0 auto;
 }
