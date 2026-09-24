@@ -84,3 +84,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::patch('/produtos/{id}/ativar', [ProdutoController::class, 'ativar'])->name('produto.ativar');
     });
 });
+
+
+// Documentação da API (View Blade)
+Route::view('/api/documentacao', 'api.documentacao')->name('api.documentacao');
