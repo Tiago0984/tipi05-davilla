@@ -26,8 +26,8 @@ return new class extends Migration
             $table->string('cep_cliente', 9);
             $table->string('email_cliente', 80)->unique('email_cliente');
             $table->string('senha_cliente');
-            $table->string('telefone_cliente', 14);
-            $table->string('foto_cliente', 60);
+            $table->string('telefone_cliente', 15);
+            $table->string('foto_cliente', 60)->nullable();
             $table->string('status_cliente', 10)->default('ATIVO');
             $table->dateTime('criado_em_cliente')->useCurrent();
             $table->dateTime('atualizado_em_cliente')->useCurrentOnUpdate()->useCurrent();
