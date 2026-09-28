@@ -13,9 +13,16 @@ class AuthController extends Controller
     {
         // 1. Validar e-mail e senha
         $dados = $request->validate([
+            // Regras
             'email'       => 'required|email',
-            'senha'       => 'required|string',
+            'senha'       => 'required|string|min:8',
             'device_name' => 'nullable|string|max:100',
+        ], [
+            // Mensagens
+            'email.required' => 'Informe o e-mail.',
+            'email.email'    => 'E-mail inválido.',
+            'senha.required' => 'Informe a senha.',
+            'senha.min'      => 'A senha deve ter no mínimo 8 caracteres.',
         ]);
 
         // 2. Localizar o cliente pelo e-mail
