@@ -33,14 +33,24 @@ class Cliente extends Authenticatable
         'telefone_cliente',
         'foto_cliente',
         'status_cliente',
+        'termo_aceito_em_cliente',
     ];
 
+    // Endereço fica fora da API: o app usará tbl_enderecos_cliente
     protected $hidden = [
         'senha_cliente',
+        'endereco_cliente',
+        'numero_cliente',
+        'complemento_cliente',
+        'bairro_cliente',
+        'cidade_cliente',
+        'uf_cliente',
+        'cep_cliente',
     ];
 
     protected $casts = [
-        'data_nasc_cliente' => 'date:Y-m-d',
+        'data_nasc_cliente'       => 'date',
+        'termo_aceito_em_cliente' => 'datetime',
     ];
 
     public function getAuthPassword()

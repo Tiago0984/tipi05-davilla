@@ -25,8 +25,9 @@ Route::prefix('v1')->group(function () {
     Route::get('/produtos', [ProdutoController::class, 'index']);
     Route::get('/produtos/{slug}', [ProdutoController::class, 'show']);
 
-    // LOGIN - rota pública
-    Route::post('/auth/login', [AuthController::class, 'login']);
+    // LOGIN e CADASTRO - rotas públicas
+    Route::post('/auth/login', [AuthController::class, 'login'])->middleware('throttle:login');
+    Route::post('/auth/cadastro', [AuthController::class, 'cadastro'])->middleware('throttle:cadastro');
 
     // ROTAS COM CREDENCIAL
     Route::middleware('auth:sanctum')->group(function () {

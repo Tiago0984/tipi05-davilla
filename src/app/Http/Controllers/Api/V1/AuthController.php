@@ -13,16 +13,9 @@ class AuthController extends Controller
     {
         // 1. Validar e-mail e senha
         $dados = $request->validate([
-            // Regras
             'email'       => 'required|email',
-            'senha'       => 'required|string|min:8',
+            'senha'       => 'required|string',
             'device_name' => 'nullable|string|max:100',
-        ], [
-            // Mensagens
-            'email.required' => 'Informe o e-mail.',
-            'email.email'    => 'E-mail inválido.',
-            'senha.required' => 'Informe a senha.',
-            'senha.min'      => 'A senha deve ter no mínimo 8 caracteres.',
         ]);
 
         // 2. Localizar o cliente pelo e-mail
@@ -44,27 +37,44 @@ class AuthController extends Controller
             ], 403);
         }
 
-        // 5. Gerar o token
-        $nomeToken = $dados['device_name'] ?? 'app-davilla';
-
-        $token = $cliente
-            ->createToken($nomeToken)
-            ->plainTextToken;
+        // 5. Gerar o token (revoga o anterior do mesmo dispositivo)
+        $token = $this->novoToken($cliente, $dados['device_name'] ?? null);
 
         // 6. Retornar token + dados básicos
-        return response()->json([
-            'success' => true,
-            'message' => 'Login realizado com sucesso.',
-            'data' => [
-                'token' => $token,
-                'cliente' => [
-                    'id_cliente'       => $cliente->id_cliente,
-                    'nome_cliente'     => $cliente->nome_cliente,
-                    'email_cliente'    => $cliente->email_cliente,
-                    'telefone_cliente' => $cliente->telefone_cliente,
-                ],
-            ],
+        return $this->respostaComToken($cliente, $token, 'Login realizado com sucesso.');
+    }
+
+    public function cadastro(Request $request)
+    {
+        // Telefone sem espaços: "(11) 95843-5174" vira "(11)95843-5174"
+        if (is_string($request->input('telefone'))) {
+            $request->merge(['telefone' => str_replace(' ', '', $request->input('telefone'))]);
+        }
+
+        $dados = $request->validate([
+            'nome'         => 'required|string|max:50',
+            'email'        => 'required|email|max:80|unique:tbl_clientes,email_cliente',
+            'telefone'     => 'required|string|max:14',
+            'senha'        => 'required|string|min:8',
+            'aceite_termo' => 'accepted',
+            'device_name'  => 'nullable|string|max:100',
+        ], [
+            'email.unique'          => 'Este e-mail já está cadastrado.',
+            'aceite_termo.accepted' => 'É necessário aceitar o termo de consentimento.',
         ]);
+
+        $cliente = Cliente::create([
+            'nome_cliente'            => $dados['nome'],
+            'email_cliente'           => $dados['email'],
+            'telefone_cliente'        => $dados['telefone'],
+            'senha_cliente'           => Hash::make($dados['senha']),
+            'status_cliente'          => 'ATIVO',
+            'termo_aceito_em_cliente' => now(),
+        ]);
+
+        $token = $this->novoToken($cliente, $dados['device_name'] ?? null);
+
+        return $this->respostaComToken($cliente, $token, 'Cadastro realizado com sucesso.', 201);
     }
 
     public function logout(Request $request)
@@ -76,5 +86,32 @@ class AuthController extends Controller
             'success' => true,
             'message' => 'Logout realizado com sucesso.',
         ]);
+    }
+
+    // Um token por dispositivo: um novo login com o mesmo nome derruba o anterior
+    private function novoToken(Cliente $cliente, ?string $deviceName): string
+    {
+        $nomeToken = $deviceName ?: 'app-mobile';
+
+        $cliente->tokens()->where('name', $nomeToken)->delete();
+
+        return $cliente->createToken($nomeToken)->plainTextToken;
+    }
+
+    private function respostaComToken(Cliente $cliente, string $token, string $mensagem, int $status = 200)
+    {
+        return response()->json([
+            'success' => true,
+            'message' => $mensagem,
+            'data' => [
+                'token' => $token,
+                'cliente' => [
+                    'id_cliente'       => $cliente->id_cliente,
+                    'nome_cliente'     => $cliente->nome_cliente,
+                    'email_cliente'    => $cliente->email_cliente,
+                    'telefone_cliente' => $cliente->telefone_cliente,
+                ],
+            ],
+        ], $status);
     }
 }

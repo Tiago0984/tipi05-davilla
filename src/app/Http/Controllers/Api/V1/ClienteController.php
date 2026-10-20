@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class ClienteController extends Controller
 {
@@ -20,21 +21,29 @@ class ClienteController extends Controller
     // PUT e PATCH /api/v1/cliente
     public function update(Request $request)
     {
-        // "sometimes" = só valida se o campo vier (permite atualização parcial)
+        $cliente = $request->user();
+
+        // Telefone sem espaços: "(11) 95843-5174" vira "(11)95843-5174"
+        if (is_string($request->input('telefone_cliente'))) {
+            $request->merge(['telefone_cliente' => str_replace(' ', '', $request->input('telefone_cliente'))]);
+        }
+
+        // PUT e PATCH: cadastro completo, todos os campos obrigatórios
         $dados = $request->validate([
-            'nome_cliente'        => 'sometimes|required|string|max:50',
-            'data_nasc_cliente'   => 'sometimes|required|date',
-            'endereco_cliente'    => 'sometimes|required|string|max:40',
-            'numero_cliente'      => 'sometimes|required|string|max:6',
-            'complemento_cliente' => 'sometimes|nullable|string|max:50',
-            'bairro_cliente'      => 'sometimes|required|string|max:40',
-            'cidade_cliente'      => 'sometimes|required|string|max:40',
-            'uf_cliente'          => 'sometimes|required|string|size:2',
-            'cep_cliente'         => 'sometimes|required|string|max:9',
-            'telefone_cliente'    => 'sometimes|required|string|max:15',
+            'nome_cliente'      => 'required|string|max:50',
+            'tipo_cliente'      => 'required|string|in:PF,PJ',
+            'cpf_cnpj_cliente'  => [
+                'required', 'string', 'max:18',
+                Rule::unique('tbl_clientes', 'cpf_cnpj_cliente')->ignore($cliente->id_cliente, 'id_cliente'),
+            ],
+            'data_nasc_cliente' => 'required|date',
+            'email_cliente'     => [
+                'required', 'email', 'max:80',
+                Rule::unique('tbl_clientes', 'email_cliente')->ignore($cliente->id_cliente, 'id_cliente'),
+            ],
+            'telefone_cliente'  => 'required|string|max:14',
         ]);
 
-        $cliente = $request->user();
         $cliente->update($dados);
 
         return response()->json([
